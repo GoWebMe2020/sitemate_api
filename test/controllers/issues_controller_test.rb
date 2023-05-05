@@ -60,4 +60,12 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
     assert_equal(Issue.last.to_json, expected_response.to_json)
     Issue.delete_all
   end
+
+  test "should delete an issue" do
+    issue = Issue.create(title: "Test Issue Title", description: "Test Issue Description")
+    delete issue_url(issue)
+    assert_response :success
+    assert_equal("", @response.body)
+    Issue.delete_all
+  end
 end
