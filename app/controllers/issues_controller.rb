@@ -15,6 +15,15 @@ class IssuesController < ApplicationController
     end
   end
 
+  def update
+    @issue = Issue.find(params[:id])
+    if @issue.update(issue_params)
+      render json: @issue, status: :ok
+    else
+      render json: @issue.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def issue_params
