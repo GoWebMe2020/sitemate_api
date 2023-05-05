@@ -3,7 +3,10 @@ class IssuesController < ApplicationController
 
   def index
     @issues = Issue.all
-    render json: @issues
+    respond_to do |format|
+      format.html
+      format.json { render json: @issues }
+    end
   end
 
   def create

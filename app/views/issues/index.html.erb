@@ -1,0 +1,13 @@
+<main class="issues-index">
+  <h1>Issues</h1>
+  <div>
+  </div>
+  <section class="issue-cards">
+    <% @issues.each do |issue| %>
+      <div class="issue-card">
+        <h3 class="issue-title"><%= link_to issue.title, issue_path(issue) %></h3>
+        <p class="issue-description"><%= issue.description %></p>
+      </div>
+    <% end %>
+  </section>
+</main>
