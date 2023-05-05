@@ -26,6 +26,7 @@ Unfortunately, I only managed to create the index page to return and display all
 
   * Run `rails db:create`
   * Then run `rails db:migrate`
+  * Run `rails db:seed`
 
 #### Run the Server
 
